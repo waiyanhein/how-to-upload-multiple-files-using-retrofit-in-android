@@ -1,9 +1,8 @@
 # how-to-upload-multiple-files-using-retrofit-in-android
-How to upload multiple files in using retrofit in android
+Uploading multiple files in using Retrofit in android
 
-This is the example of uploading array of files using retrofit in Android.
 
-####This is how the service will look like
+### Service interface
 ```
 public interface ApiService {
 
@@ -13,7 +12,7 @@ public interface ApiService {
 
 ``` 
 
-####This is how the Client class look like
+### Client class
 ```
 public class ApiClient   {
     public static final String API_BASE_URL = "api base url";
@@ -31,7 +30,7 @@ public class ApiClient   {
 ```
 
 
-####Upload like this in activity or fragment or where you want
+### Uploading file in the activity/ fragment class
 ```
     ApiService service = ApiClient.createService(ApiService.class);
         
@@ -56,7 +55,7 @@ public class ApiClient   {
      });
 ```
 
-####For the server-side, I used asp.net mvc. So Controller's action will be something like this
+### Handling request on the server-side (ASP.NET MVC)
 ```
 [HttpPost]
 public JsonResult CreateMemePost(IEnumerable<HttpPostedFileBase> files)
